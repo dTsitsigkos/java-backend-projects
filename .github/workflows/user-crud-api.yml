@@ -57,7 +57,7 @@ jobs:
         run: |
           docker build \
             -t ghcr.io/dtsitsigkos/user-crud-api:${{ github.sha }} \
-            ./backend
+            ./user-crud-api
 
       - name: Push Docker image
         run: |
