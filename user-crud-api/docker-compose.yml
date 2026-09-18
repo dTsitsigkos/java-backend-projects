@@ -2,7 +2,7 @@ services:
 
   postgres:
     image: postgres:16
-    container_name: industry-postgres
+    container_name: user-crud-postgres
     environment:
       POSTGRES_DB: industry
       POSTGRES_USER: industry
@@ -17,9 +17,9 @@ services:
       timeout: 5s
       retries: 5
 
-  backend:
-    build: ./backend
-    container_name: industry-backend
+  user-crud-api:
+    build: ./user-crud-api
+    container_name: user-crud-api
     ports:
       - "8080:8080"
     environment:

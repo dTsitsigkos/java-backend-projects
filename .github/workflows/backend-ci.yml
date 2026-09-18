@@ -43,7 +43,7 @@ jobs:
           cache: maven
 
       - name: Build and tests
-        working-directory: backend
+        working-directory: user-crud-api
         run: ./mvnw clean package
 
       - name: Log in to GHCR
@@ -56,9 +56,9 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
-            -t ghcr.io/dtsitsigkos/java-backend-projects:${{ github.sha }} \
+            -t ghcr.io/dtsitsigkos/user-crud-api:${{ github.sha }} \
             ./backend
 
       - name: Push Docker image
         run: |
-          docker push ghcr.io/dtsitsigkos/java-backend-projects:${{ github.sha }}
+          docker push ghcr.io/dtsitsigkos/user-crud-api:${{ github.sha }}
