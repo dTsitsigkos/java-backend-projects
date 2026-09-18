@@ -18,7 +18,7 @@ services:
       retries: 5
 
   user-crud-api:
-    build: ./user-crud-api
+    build: .
     container_name: user-crud-api
     ports:
       - "8080:8080"
