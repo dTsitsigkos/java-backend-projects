@@ -4,16 +4,30 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
-@Entity 
+@Entity
+@Table(name = "orders") 
 public class Order {
 
     @Id 
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotNull
     private Long userId;
+    
+    @NotNull
     private Long productId;
+    
+    @NotNull
+    @Min(1)
     private Integer quantity;
+    
+    @NotBlank
     private String status;
 
     public Order(){}
